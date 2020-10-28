@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
-    
+
+<div class="main-container">
+    <div class="container-1">
+        <h1>Flashcards</h1>
+        <button onclick="showContainer2()" class="btn btn-lg btn-outline-dark">Add another card</button>
+    </div>
+
+    <div class="container-2">
+        <form action="">
+        <label for="">Question</label>
+        <svg onclick="hideContainer2()" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+          </svg> <br>
+
+          <textarea  id="question"></textarea>
+        </form>
+
+        <form action="">
+            <label for="">Answer</label> <br>
+            <textarea id="answer" ></textarea>
+        </form>
+          <button id="saveFlashcard()" class="btn btn-lg btn-outline-dark">Save</button>
+    </div>
+    <div class="container-3"></div>
+</div>
+
+    <script src="script.js"></script>
+
+
 </body>
 </html>
