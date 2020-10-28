@@ -20,12 +20,27 @@ function saveFlashCard(){
 
     node1.innerHTML=question;
     node2.innerHTML=answer;
-    
+
     node2.style.display="none";
     node2.style.color="red";
 
     node0.appendChild(node1);
     node0.appendChild(node2);
+
+node0.addEventListener("click", function(){
+    if(node2.style.display=="none"){
+        node2.style.display="block";
+    }
+    else{
+        node2.style.display="none";
+    }
+})
+
+node0.addEventListener("dblclick",function(){
+node0.remove();
+})
+
+node0.setAttribute("style", "background:white; width:30%; padding:20px; border: 1px solid orange; margin:10px; overflow:hidden;");
 
     container3.insertAdjacentElement("beforeend", node0);
 }
