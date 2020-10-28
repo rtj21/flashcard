@@ -1,0 +1,51 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+textarea, h2, button{
+font-size: inherit;
+}
+.main-container{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+.container-1{
+    text-align: center;
+}
+.container-2{
+    display: none;
+   border: 1px solid gray;
+   margin: auto;
+   border-radius: 10px;
+   width: 400px;
+   padding: 20px;
+   margin-top: 20px;
+}
+textarea{
+    border: 1px solid orange;
+    outline: none;
+    border-radius: 10px;
+    width: 350px;
+    height: 75px;
+}
+svg{
+    float: right;
+    cursor: pointer;
+    transition: 1s;
+}
+svg:hover{
+    background-color: red;
+    color: white;
+}
+.container-3{
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-top: 10px;
+}
