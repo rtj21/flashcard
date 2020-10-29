@@ -21,7 +21,7 @@ function saveFlashCard(){
     var editButton = document.createElement("button");
     var editTextArea = document.createElement("textarea");
     var confirmEdit = document.createElement("button");
-
+    var deleteFlashcard = document.createElement("button");
 
     questionDiv.innerHTML=question;
     answerDiv.innerHTML=answer;
@@ -29,10 +29,12 @@ function saveFlashCard(){
     showButton.innerHTML="Show answer";
     editButton.innerHTML="Edit";
     confirmEdit.innerHTML="Confirm edit";
+    deleteFlashcard.innerHTML="X";
 
-    showButton.className="btn btn-outline-info btn-sm"
-    editButton.className="btn btn-outline-info btn-sm"
-    confirmEdit.className="btn btn-outline-danger btn-sm"
+    showButton.className="btn btn-outline-info btn-sm";
+    editButton.className="btn btn-outline-info btn-sm";
+    confirmEdit.className="btn btn-outline-danger btn-sm";
+    deleteFlashcard.className="btn btn-outline-secondary btn-sm";
 
     editTextArea.id="newText";
 
@@ -44,10 +46,12 @@ function saveFlashCard(){
 
     cardDiv.appendChild(showButton);
     cardDiv.appendChild(editButton);
+    cardDiv.appendChild(deleteFlashcard);
     cardDiv.appendChild(questionDiv);
     cardDiv.appendChild(answerDiv);
     cardDiv.appendChild(confirmEdit);
     questionDiv.appendChild(editTextArea);
+    
 
 
     showButton.addEventListener("click", function(){
@@ -58,10 +62,11 @@ function saveFlashCard(){
         answerDiv.style.display="none";
     }
 })
-/*
-cardDiv.addEventListener("dblclick",function(){
+
+
+deleteFlashcard.addEventListener("click",function(){
 cardDiv.remove();
-})*/
+})
 
 
 editButton.addEventListener("click",function(){
