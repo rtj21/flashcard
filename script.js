@@ -14,33 +14,60 @@ function saveFlashCard(){
     const question =document.getElementById("question").value;
     const answer =document.getElementById("answer").value;
 
-    var node0 = document.createElement("div");
-    var node1 = document.createElement("h2");
-    var node2 = document.createElement("h2");
+    var cardDiv = document.createElement("div");
+    var questionDiv = document.createElement("h2");
+    var answerDiv = document.createElement("h2");
+    var showButton = document.createElement("button");
+    var editButton = document.createElement("button");
+    var editTextArea = document.createElement("textarea");
 
-    node1.innerHTML=question;
-    node2.innerHTML=answer;
 
-    node2.style.display="none";
-    node2.style.color="red";
+    questionDiv.innerHTML=question;
+    answerDiv.innerHTML=answer;
 
-    node0.appendChild(node1);
-    node0.appendChild(node2);
+    showButton.innerHTML="Show answer";
+    showButton.className="btn btn-outline-info btn-sm"
+    editButton.innerHTML="Edit";
+    editButton.className="btn btn-outline-info btn-sm"
 
-node0.addEventListener("click", function(){
-    if(node2.style.display=="none"){
-        node2.style.display="block";
+    answerDiv.style.display="none";
+    answerDiv.style.color="red";
+    editTextArea.style.display="none";
+
+    cardDiv.appendChild(showButton);
+    cardDiv.appendChild(editButton);
+    cardDiv.appendChild(questionDiv);
+    cardDiv.appendChild(answerDiv);
+    questionDiv.appendChild(editTextArea);
+
+
+    showButton.addEventListener("click", function(){
+    if(answerDiv.style.display=="none"){
+        answerDiv.style.display="block";
     }
     else{
-        node2.style.display="none";
+        answerDiv.style.display="none";
     }
 })
 
-node0.addEventListener("dblclick",function(){
-node0.remove();
+cardDiv.addEventListener("dblclick",function(){
+cardDiv.remove();
 })
 
-node0.setAttribute("style", "background:white; width:30%; padding:20px; border: 1px solid orange; margin:10px; overflow:hidden;");
 
-    container3.insertAdjacentElement("beforeend", node0);
+editButton.addEventListener("click",function(){
+    editTextArea.placeholder="Write here your new question";
+    if(editTextArea.style.display=="none")
+    editTextArea.style.display="block";
+    else editTextArea.style.display="none";
+})
+
+cardDiv.setAttribute("style", "background:white; padding:20px 40px; border: 1px solid orange; margin:10px; overflow:hidden;");
+if(document.getElementById("question").value!="")
+    {container3.insertAdjacentElement("beforeend", cardDiv);
+    document.getElementById("question").value="";
+    document.getElementById("answer").value="";}
+
+    
 }
+
